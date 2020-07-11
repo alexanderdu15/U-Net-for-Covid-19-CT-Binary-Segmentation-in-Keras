@@ -29,13 +29,13 @@ Although the RT-PCR (Reverse Transcription Polymerase Chain Reaction) test [4] a
 Moving forward, elastic augmentations to the dataset could be used to simulate variation in human tissue, while generative models such as Generative Adversarial Networks [7] could be used to synthesize more images and masks from the dataset’s distribution. In addition, Object Region Mining with Adversarial Erasing [8] could be used to “mine” infected regions using classification networks while finding new infected regions by adversarially erasing “mined” regions. 
  
 ## References
-  [1] O. Ronneberger, P. Fischer, and T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation,” arXiv, 2015.
-  [2] “COVID-19 CT segmentation dataset,” https://medicalsegmentation.com/covid19/, 2020.
-  [3] H. B. Jenssen, “Covid-19 radiology — data collection and preparation for Artificial Intelligence,” Medium, 2020. 
-  [4] T. Ai, Z. Yang et al., “Correlation of Chest CT and RT-PCR Testing in Corona Virus Disease 2019 (COVID-19) in China: A Report of 1014 Cases,” Radiology, vol. 2019, p. 200642, 2020.
-  [5] D. Konar, B. K. Panigrahi, S. Bhattacharyya, and N. Dey, “Auto-diagnosis of COVID-19 using Lung CT Images with Semi-supervised Shallow Learning Network,” Research Square, 2020.
-  [6] D. P. Fan, T. Zhou et al., “Inf-Net: Automatic COVID-19 Lung Infection Segmentation from CT Images,” arXiv, 2020.
-  [7] I. Goodfellow, J. Pouget-Abadie et al., “Generative Adversarial Networks,” arXiv, 2014.
-  [8] Y. Wei, J. Feng et al., “Object Region Mining with Adversarial Erasing: A Simple Classification to Semantic Segmentation Approach,” arXiv, 2018.
-  [9] M. Ilyas, H. Rehman, A. Nait-ali, “Detection of Covid-19 From Chest X-ray Images Using Artificial Intelligence: An Early Review,” arXiv, 2020.
+[1] O. Ronneberger, P. Fischer, and T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation,” arXiv, 2015.  
+[2] “COVID-19 CT segmentation dataset,” https://medicalsegmentation.com/covid19/, 2020.  
+[3] H. B. Jenssen, “Covid-19 radiology — data collection and preparation for Artificial Intelligence,” Medium, 2020.   
+[4] T. Ai, Z. Yang et al., “Correlation of Chest CT and RT-PCR Testing in Corona Virus Disease 2019 (COVID-19) in China: A Report of 1014 Cases,” Radiology, vol. 2019, p. 200642, 2020.  
+[5] D. Konar, B. K. Panigrahi, S. Bhattacharyya, and N. Dey, “Auto-diagnosis of COVID-19 using Lung CT Images with Semi-supervised Shallow Learning Network,” Research Square, 2020.  
+[6] D. P. Fan, T. Zhou et al., “Inf-Net: Automatic COVID-19 Lung Infection Segmentation from CT Images,” arXiv, 2020.  
+[7] I. Goodfellow, J. Pouget-Abadie et al., “Generative Adversarial Networks,” arXiv, 2014.  
+[8] Y. Wei, J. Feng et al., “Object Region Mining with Adversarial Erasing: A Simple Classification to Semantic Segmentation Approach,” arXiv, 2018.  
+[9] M. Ilyas, H. Rehman, A. Nait-ali, “Detection of Covid-19 From Chest X-ray Images Using Artificial Intelligence: An Early Review,” arXiv, 2020.  
 
