@@ -9,16 +9,19 @@ A machine learning model for the binary segmentation of Covid-19 in CT images.
   Biomedical image processing is an active and growing discipline. Within the field, the segmentation of medical images is a crucial step for diagnosis, monitoring, and treatment planning in clinical studies. While manual segmentation of images is a tedious and lengthy task, advances in machine learning algorithms can be leveraged for fast, efficient, and automated segmentation. One such method is U-Net [1], consisting of symmetrical contracting and expanding paths that allow such a network to both capture context and localize features. This architecture is implemented in this short introductory project to python and ML, for the binary segmentation of Covid-19 symptoms in chest axial CT images.
 
 ## Data and Preprocessing 
-  The Covid-19 segmentation dataset [2] from Medical Segmentation is utilized for training and testing. This dataset consists of 100 axial CT images from more than 40 patients diagnosed with Covid-19, as well as 100 segmentation masks produced by expert radiologists [3]. Although labelled for three symptoms: ground glass opacification, consolidations, and pleural effusions, the masks are treated as binary images for simplicity. Images and masks are converted from NII (or NIfTI) files to 4D NumPy arrays using NiBabel, and a train-test split of 60/40 is performed. Some images and masks are shown below in Image 1 [2]. Refer to Appendix 1 for the full dataset.
+  The Covid-19 segmentation dataset [2] from Medical Segmentation is utilized for training and testing. This dataset consists of 100 axial CT images from more than 40 patients diagnosed with Covid-19, as well as 100 segmentation masks produced by expert radiologists [3]. Although labelled for three symptoms: ground glass opacification, consolidations, and pleural effusions, the masks are treated as binary images for simplicity. Images and masks are converted from NII (or NIfTI) files to 4D NumPy arrays using NiBabel, and a train-test split of 60/40 is performed. Some images and masks are shown below in Figure 1 [2]. Refer to Appendix 1 for the full dataset.
   
   Due to the relatively small dataset size, image augmentations must be applied to allow the network to generalize. As such, Keras’ ImageDataGenerator is employed to perform random rotation, zoom, x-axis shifts, and y-axis shifts. A data generator pipeline is created for training images and masks separately, and is then zipped together for implementation in the U-Net. 
  
-### Image 1: Images and Masks from the Covid-19 segmentation dataset
+### Figure 1: Images and Masks from the Covid-19 segmentation dataset
 ![](utils/sample-image-mask-plots.png)
 
 ## U-Net Architecture
-  As mentioned above, U-Net is an effective method for image processing. Developed for biomedical image segmentation by Olaf Ronneberger et al. in 2015, U-Net has quickly become popular for its speed and effectiveness. The contracting path (or the encoder) uses traditional convolutional and pooling layers to capture an image’s context. The expansive path (or decoder) is symmetric with the encoder, using transposed convolutional layers for “upsampling”. On the decoder, “upsampled” layers are concatenated with the corresponding layers on the encoder—this is what gives a U-Net its signature ability to generate deep localizable features, allowing for effective segmentation. These two symmetrical paths result in the architecture’s U-shape, leading to the network’s name: U-Net. The final layer in a U-Net is a convolutional layer with 1 (1x1) filter, which outputs a binary value for every pixel in the input image. In essence, U-Net performs classification for every pixel in an image. 
- 
+  As mentioned above, U-Net is an effective method for image processing. Developed for biomedical image segmentation by Olaf Ronneberger et al. in 2015, U-Net has quickly become popular for its speed and effectiveness. The contracting path (or the encoder) uses traditional convolutional and pooling layers to capture an image’s context. The expansive path (or decoder) is symmetric with the encoder, using transposed convolutional layers for “upsampling”. On the decoder, “upsampled” layers are concatenated with the corresponding layers on the encoder—this is what gives a U-Net its signature ability to generate deep localizable features, allowing for effective segmentation. These two symmetrical paths result in the architecture’s U-shape, leading to the network’s name: U-Net. The final layer in a U-Net is a convolutional layer with 1 (1x1) filter, which outputs a binary value for every pixel in the input image. In essence, U-Net performs classification for every pixel in an image. Figure 2 presents a visual representation of a U-Net’s architecture, where arrows denote each different operation and boxes correspond to feature maps [1]. Note that unlike the picture, the final layer of this project’s U-Net has identical dimensions to the input image; the contracting and expansive paths are truly symmetrical. Please refer to Appendix 2 for details of the specific U-Net used.
+  
+### Figure 2: U-Net Architecture (32x32 pixels in the lowest resolution)
+![](utils/u-net-architecture.png)
+
 ## Training and Results
   The network was written in python using Keras and trained in Google Colab. Initially using binary cross-entropy as its loss function, the network achieved good accuracy but poor precision and recall. Due to the imbalance between the background and the segmentation masks in some cases, a model that returns a blank image would still achieve decent accuracy. As such, a loss function derived from Sørensen–Dice index is implemented, which is designed to measure the relative overlap between predictions and ground truths. This way, the loss function is independent of object sizes. Precision, recall, Jaccard distance, area under ROC curve, and F1 score are also used to monitor the network during training. 
   
@@ -42,3 +45,11 @@ A machine learning model for the binary segmentation of Covid-19 in CT images.
 [8] Y. Wei, J. Feng et al., “Object Region Mining with Adversarial Erasing: A Simple Classification to Semantic Segmentation Approach,” arXiv, 2018.  
 [9] M. Ilyas, H. Rehman, A. Nait-ali, “Detection of Covid-19 From Chest X-ray Images Using Artificial Intelligence: An Early Review,” arXiv, 2020.  
 
+### Appendix 1: Covid-19 Segmentation Dataset
+#### Images  
+![](utils/image-plots.png)  
+#### Masks  
+![](utils/mask-plots.png)  
+
+### Appendix 2: U-Net Model Summary
+![](utils/u-net-model-summary.png)
