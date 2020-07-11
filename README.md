@@ -14,7 +14,7 @@ A machine learning model for the binary segmentation of Covid-19 in CT images.
   Due to the relatively small dataset size, image augmentations must be applied to allow the network to generalize. As such, Keras’ ImageDataGenerator is employed to perform random rotation, zoom, x-axis shifts, and y-axis shifts. A data generator pipeline is created for training images and masks separately, and is then zipped together for implementation in the U-Net. 
  
 ### Image 1: Images and Masks from the Covid-19 segmentation dataset
-!(./utils/sample-image-mask-plots.PNG)  
+![sampleImgsAndMasks](./utils/sample-image-mask-plots.PNG)  
 
 ## U-Net Architecture
   As mentioned above, U-Net is an effective method for image processing. Developed for biomedical image segmentation by Olaf Ronneberger et al. in 2015, U-Net has quickly become popular for its speed and effectiveness. The contracting path (or the encoder) uses traditional convolutional and pooling layers to capture an image’s context. The expansive path (or decoder) is symmetric with the encoder, using transposed convolutional layers for “upsampling”. On the decoder, “upsampled” layers are concatenated with the corresponding layers on the encoder—this is what gives a U-Net its signature ability to generate deep localizable features, allowing for effective segmentation. These two symmetrical paths result in the architecture’s U-shape, leading to the network’s name: U-Net. The final layer in a U-Net is a convolutional layer with 1 (1x1) filter, which outputs a binary value for every pixel in the input image. In essence, U-Net performs classification for every pixel in an image. 
