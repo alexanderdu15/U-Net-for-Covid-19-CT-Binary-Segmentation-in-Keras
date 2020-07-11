@@ -45,7 +45,7 @@ print('Dataset split completed')
 print('Tensor sizes:')
 print('Training images:'+str(trainImgs.shape)+'\nTest images:'+str(testImgs.shape)+'\nTest masks:'+str(trainMasks.shape)+'\nTest masks:'+str(testMasks.shape))
 
-dataGenArgs = dict(shear_range=0.05, rotation_range=10, width_shift_range=0.10, height_shift_range=0.10, zoom_range=0.10) #ImageDataGenerator arguments
+dataGenArgs = dict(rotation_range=10, width_shift_range=0.1, height_shift_range=0.1, zoom_range=0.1) #ImageDataGenerator arguments
 imageGen, maskGen = keras.preprocessing.image.ImageDataGenerator(**dataGenArgs), keras.preprocessing.image.ImageDataGenerator(**dataGenArgs)
 
 seed = 30
