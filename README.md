@@ -43,7 +43,8 @@ A machine learning model for the binary segmentation of Covid-19 in CT images.
 [6] D. P. Fan, T. Zhou et al., “Inf-Net: Automatic COVID-19 Lung Infection Segmentation from CT Images,” arXiv, 2020.  
 [7] I. Goodfellow, J. Pouget-Abadie et al., “Generative Adversarial Networks,” arXiv, 2014.  
 [8] Y. Wei, J. Feng et al., “Object Region Mining with Adversarial Erasing: A Simple Classification to Semantic Segmentation Approach,” arXiv, 2018.  
-[9] M. Ilyas, H. Rehman, A. Nait-ali, “Detection of Covid-19 From Chest X-ray Images Using Artificial Intelligence: An Early Review,” arXiv, 2020.  
+[9] M. Ilyas, H. Rehman, A. Nait-ali, “Detection of Covid-19 From Chest X-ray Images Using Artificial Intelligence: An Early Review,” arXiv, 2020.   
+[10] C. Choi, Corona-Net: Diagnosis and Segmentation of the CoronavirusDisease 2019, https://github.com/chinglamchoi/Corona-Net, 2020.  
 
 ### Appendix 1: Covid-19 Segmentation Dataset
 #### Images  
