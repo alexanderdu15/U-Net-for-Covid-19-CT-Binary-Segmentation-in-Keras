@@ -6,7 +6,7 @@ A machine learning model for the binary segmentation of Covid-19 in CT images.
   This project should be used for research purposes only. The purpose of the project is to show the potential of machine learning in medical support such as diagnosis systems. Although the network has achieved fair performance, it is not meant to be an alternative to professional medical diagnosis.
   
 ## Background
-  I am a high school student who is an intern at Hanlun AI, an artificial intelligence consulting firm based in Hong Kong. With very little experience in programming and machine learning, I undertook this week-long project to give myself an introduction to these topics while applying my knowledge to a real-world problem.
+  I am a high school student who is an intern at Hanlun AI, an artificial intelligence consulting firm based in Hong Kong. With very little experience in programming and machine learning, I undertook this week-long project to give myself an introduction to these topics while applying my knowledge hands-on to a real-world problem.
 
 ## Introduction
   Biomedical image processing is an active and growing discipline. Within the field, the segmentation of medical images is a crucial step for diagnosis, monitoring, and treatment planning in clinical studies. While manual segmentation of images is a tedious and lengthy task, advances in machine learning algorithms can be leveraged for fast, efficient, and automated segmentation. One such method is U-Net [1], consisting of symmetrical contracting and expanding paths that allow such a network to both capture context and localize features. This architecture is implemented in this short introductory project to python and ML, for the binary segmentation of Covid-19 symptoms in chest axial CT images.
